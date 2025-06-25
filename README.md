@@ -1,12 +1,54 @@
-# React + Vite
+# Plant Care Tracker - Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live ](https://cozy-clafoutis-c2c5d8.netlify.app/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+This is the **frontend client** for the Plant Care Tracker application built with React.  
+Users can register, login, add new plants, track watering schedules, and view plant details.  
+Authentication is handled via Firebase, and the UI is styled with TailwindCSS.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+
+## Technology Stack
+
+- React
+- Firebase Authentication (Email/Password & Google OAuth)
+- TailwindCSS
+- React Router
+- React Toastify
+
+---
+
+## Features
+
+- User registration and login using Firebase Authentication
+- Add, edit, and delete plants
+- Track watering schedules with notifications
+- View detailed plant care information
+- Responsive design with TailwindCSS
+- Toast notifications for feedback on actions
+
+---
+
+## Dependencies
+
+- react
+- react-router-dom
+- firebase
+- react-toastify
+- axios
+- tailwindcss
+
+---
+
+## Getting Started Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/plant-care-tracker-client.git
+cd plant-care-tracker-client
