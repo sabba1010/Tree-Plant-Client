@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@tailwind utilities;
+
+
+
+body {
+  @apply  text-green-900 ;
+} 
+
+
+
