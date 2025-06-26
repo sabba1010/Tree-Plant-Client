@@ -1,6 +1,6 @@
 # Plant Care Tracker - Client
 
-[Live ](https://cozy-clafoutis-c2c5d8.netlify.app/)
+[Live ](https://cheery-tanuki-28028f.netlify.app/)
 
 ---
 
