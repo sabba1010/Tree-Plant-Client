@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
-
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import OfferSection from './OfferSection';
 
 const Home = () => {
   const [plants, setPlants] = useState([]);
@@ -17,69 +20,68 @@ const Home = () => {
     <div className="space-y-16">
       
       {/* Banner/Slider */}
-     <div className="w-full">
-<Swiper
-  className="h-[300px] md:h-[500px] rounded-2xl shadow-xl"
-  loop={true}
-  autoplay={{ delay: 3000 }}
-  spaceBetween={30}
-  pagination={{ clickable: true }}
-  navigation={true}  // ← arrows enable
->
-  {/* Slide 1 */}
-  <SwiperSlide className="relative">
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwjx8juzYSYi_5g7ZU2O9tbC8Iu8ReBjXyg&s"
-      alt="Plant Care"
-      className="w-full h-full object-cover rounded-2xl"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-green-900/70 to-green-500/30 flex flex-col items-center justify-center text-center p-6 rounded-2xl transition-all duration-500 ease-in-out">
-      <h2 className="text-3xl md:text-5xl font-extrabold text-white drop-shadow-md animate-fadeIn">
-        Nurture Your Trees Like a Pro
-      </h2>
-      <p className="mt-4 text-white text-lg animate-fadeIn delay-150">
-        Understand watering cycles, sunlight needs, and soil care for thriving trees.
-      </p>
-    </div>
-  </SwiperSlide>
+      <div className="w-full">
+        <Swiper
+          modules={[Autoplay, Pagination, Navigation]}
+          className="h-[60vh] md:h-[65vh] lg:h-[70vh] rounded-2xl shadow-xl"
+          loop={true}
+          autoplay={{ delay: 3000 }}
+          spaceBetween={30}
+          pagination={{ clickable: true }}
+          navigation={true}
+        >
+          {/* Slide 1 */}
+          <SwiperSlide className="relative w-full h-full">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwjx8juzYSYi_5g7ZU2O9tbC8Iu8ReBjXyg&s"
+              alt="Plant Care"
+              className="w-full h-full object-cover rounded-2xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-green-900/70 to-green-500/30 flex flex-col items-center justify-center text-center p-6 rounded-2xl">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white">
+                Nurture Your Trees Like a Pro
+              </h2>
+              <p className="mt-4 text-white text-lg">
+                Understand watering cycles, sunlight needs, and soil care for thriving trees.
+              </p>
+            </div>
+          </SwiperSlide>
 
-  {/* Slide 2 */}
-  <SwiperSlide className="relative">
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOz8qvOZ0WV0v30O2SkJU7qCOlNm5QbB6bHg&s"
-      alt="Plant Varieties"
-      className="w-full h-full object-cover rounded-2xl"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 to-green-400/30 flex flex-col items-center justify-center text-center p-6 rounded-2xl">
-      <h2 className="text-3xl md:text-5xl font-extrabold text-white animate-fadeIn">
-        Discover Rare & Native Tree Species
-      </h2>
-      <p className="mt-4 text-white text-lg animate-fadeIn delay-150">
-        Explore the diversity of local trees and their unique benefits for your garden.
-      </p>
-    </div>
-  </SwiperSlide>
+          {/* Slide 2 */}
+          <SwiperSlide className="relative w-full h-full">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOz8qvOZ0WV0v30O2SkJU7qCOlNm5QbB6bHg&s"
+              alt="Plant Varieties"
+              className="w-full h-full object-cover rounded-2xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 to-green-400/30 flex flex-col items-center justify-center text-center p-6 rounded-2xl">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white">
+                Discover Rare & Native Tree Species
+              </h2>
+              <p className="mt-4 text-white text-lg">
+                Explore the diversity of local trees and their unique benefits for your garden.
+              </p>
+            </div>
+          </SwiperSlide>
 
-  {/* Slide 3 */}
-  <SwiperSlide className="relative">
-    <img
-      src="https://www.undp.org/sites/g/files/zskgke326/files/migration/bd/117241365_10158627712927433_464094589491961361_o.jpg"
-      alt="Track Plants"
-      className="w-full h-full object-cover rounded-2xl"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-green-800/70 to-green-300/20 flex flex-col items-center justify-center text-center p-6 rounded-2xl">
-      <h2 className="text-3xl md:text-5xl font-extrabold text-white animate-fadeIn">
-        Keep Track of Your Trees’ Growth
-      </h2>
-      <p className="mt-4 text-white text-lg animate-fadeIn delay-150">
-        Use our app to monitor watering, pruning, and overall health for a lush green space.
-      </p>
-    </div>
-  </SwiperSlide>
-</Swiper>
-
-</div>
-
+          {/* Slide 3 */}
+          <SwiperSlide className="relative w-full h-full">
+            <img
+              src="https://www.undp.org/sites/g/files/zskgke326/files/migration/bd/117241365_10158627712927433_464094589491961361_o.jpg"
+              alt="Track Plants"
+              className="w-full h-full object-cover rounded-2xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-green-800/70 to-green-300/20 flex flex-col items-center justify-center text-center p-6 rounded-2xl">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white">
+                Keep Track of Your Trees’ Growth
+              </h2>
+              <p className="mt-4 text-white text-lg">
+                Use our app to monitor watering, pruning, and overall health for a lush green space.
+              </p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
 
       {/* New Plants Section */}
       <section className="max-w-6xl mx-auto px-4">
@@ -98,49 +100,49 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Top Plant Care Mistakes Section */}
-    
-<section className="bg-green-50 py-12 px-4">
-  <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl font-bold mb-6 text-green-900">Essential Plant Care Tips</h2>
-    <ul className="text-green-800 space-y-2 text-left list-disc list-inside">
-      <li>Water your plants consistently but avoid waterlogging</li>
-      <li>Place plants according to their light requirements</li>
-      <li>Use nutrient-rich potting soil suitable for your plant type</li>
-      <li>Prune dead or yellowing leaves regularly</li>
-      <li>Repot plants when they outgrow their containers</li>
-      <li>Feed your plants with appropriate fertilizer during growing season</li>
-      <li>Keep an eye out for pests and treat them early</li>
-    </ul>
-  </div>
-</section>
+      {/* Essential Plant Care Tips Section */}
+      <section className="bg-green-50 py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6 text-green-900">Essential Plant Care Tips</h2>
+          <ul className="text-green-800 space-y-2 text-left list-disc list-inside">
+            <li>Water your plants consistently but avoid waterlogging</li>
+            <li>Place plants according to their light requirements</li>
+            <li>Use nutrient-rich potting soil suitable for your plant type</li>
+            <li>Prune dead or yellowing leaves regularly</li>
+            <li>Repot plants when they outgrow their containers</li>
+            <li>Feed your plants with appropriate fertilizer during growing season</li>
+            <li>Keep an eye out for pests and treat them early</li>
+          </ul>
+        </div>
+      </section>
 
       {/* Beginner-Friendly Plants Section */}
-  <section className="py-12 px-4">
-  <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl font-bold mb-6 text-green-900">
-      🌱 Seasonal Plant Care Tips
-    </h2>
-    <p className="text-green-700 mb-6">
-      Keep your plants happy all year round with these easy care tips:
-    </p>
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6 text-green-900">
+            🌱 Seasonal Plant Care Tips
+          </h2>
+          <p className="text-green-700 mb-6">
+            Keep your plants happy all year round with these easy care tips:
+          </p>
 
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-green-800 mb-8">
-      <div className="bg-green-100 p-4 rounded-lg">🌸 Spring: Repot & increase watering</div>
-      <div className="bg-green-100 p-4 rounded-lg">☀️ Summer: Provide shade & more water</div>
-      <div className="bg-green-100 p-4 rounded-lg">🍂 Autumn: Reduce watering & remove dead leaves</div>
-    </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-green-800 mb-8">
+            <div className="bg-green-100 p-4 rounded-lg">🌸 Spring: Repot & increase watering</div>
+            <div className="bg-green-100 p-4 rounded-lg">☀️ Summer: Provide shade & more water</div>
+            <div className="bg-green-100 p-4 rounded-lg">🍂 Autumn: Reduce watering & remove dead leaves</div>
+          </div>
 
-    <a
-      href="Seasonal-Plant-Care-Tips"
-      className="inline-block bg-green-600 text-white font-semibold px-6 py-2 rounded hover:bg-green-700 transition duration-300"
-    >
-      View More
-    </a>
-  </div>
-</section>
+          <a
+            href="Seasonal-Plant-Care-Tips"
+            className="inline-block bg-green-600 text-white font-semibold px-6 py-2 rounded hover:bg-green-700 transition duration-300"
+          >
+            View More
+          </a>
+        </div>
+      </section>
 
-
+      <OfferSection/>
+      
     </div>
   );
 };

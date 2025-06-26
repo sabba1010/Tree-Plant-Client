@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { format } from 'date-fns'; // date formatting library
+import { format } from 'date-fns';
 
 const PlantDetails = () => {
   const plant = useLoaderData();
@@ -18,7 +18,6 @@ const PlantDetails = () => {
     userName,
   } = plant;
 
-  // Format dates
   const formattedLastWatered = lastWateredDate
     ? format(new Date(lastWateredDate), 'MMMM dd, yyyy')
     : 'N/A';
@@ -28,31 +27,34 @@ const PlantDetails = () => {
     : 'N/A';
 
   return (
-    <div className="max-w-5xl mx-auto mt-10 p-6">
-      <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-2xl shadow-xl p-6 sm:p-10">
-        <h2 className="text-4xl font-extrabold text-center text-green-800 mb-8">
+    <div className="max-w-6xl mx-auto mt-10 px-4">
+      <div className="bg-green-50 border border-green-100 rounded-2xl p-6 md:p-10 shadow-md">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-green-800 mb-8">
           🌱 {plantName}
         </h2>
 
-        <div className="flex flex-col lg:flex-row gap-8 items-center">
-          {/* Plant Image */}
-          <div className="lg:w-1/2 w-full">
+        <div className="flex flex-col lg:flex-row gap-6">
+          {/* Image */}
+          <div className="w-full lg:w-1/2">
             <img
               src={image}
               alt={plantName}
-              className="rounded-2xl border border-green-300 shadow-lg w-full object-cover"
+              className="w-full h-auto max-h-[400px] object-cover rounded-xl border border-green-200 shadow-sm"
             />
           </div>
 
-          {/* Plant Info */}
-          <div className="lg:w-1/2 w-full space-y-4 text-green-900 text-lg">
-            <p><span className="font-semibold">🌿 Category:</span> {category}</p>
-            <p><span className="font-semibold">💧 Watering Frequency:</span> Every {wateringFrequency} days</p>
-            <p><span className="font-semibold">🧩 Care Level:</span> {careLevel?.charAt(0).toUpperCase() + careLevel?.slice(1)}</p>
-            <p><span className="font-semibold">📅 Last Watered:</span> {formattedLastWatered}</p>
-            <p><span className="font-semibold">⏭️ Next Watering:</span> {formattedNextWatering}</p>
-            <p><span className="font-semibold">💚 Health Status:</span> {healthStatus}</p>
-            <p><span className="font-semibold">👤 Added By:</span> {userName} <span className="text-sm text-green-700">({userEmail})</span></p>
+          {/* Info */}
+          <div className="w-full lg:w-1/2 space-y-4 text-green-900 text-base md:text-lg">
+            <p><strong>🌿 Category:</strong> {category}</p>
+            <p><strong>💧 Watering:</strong> Every {wateringFrequency} days</p>
+            <p><strong>🧩 Care Level:</strong> {careLevel?.charAt(0).toUpperCase() + careLevel?.slice(1)}</p>
+            <p><strong>📅 Last Watered:</strong> {formattedLastWatered}</p>
+            <p><strong>⏭️ Next Watering:</strong> {formattedNextWatering}</p>
+            <p><strong>💚 Health Status:</strong> {healthStatus}</p>
+            <p>
+              <strong>👤 Added By:</strong> {userName}{' '}
+              <span className="text-sm text-green-600">({userEmail})</span>
+            </p>
           </div>
         </div>
 
@@ -60,7 +62,7 @@ const PlantDetails = () => {
         {description && (
           <div className="mt-10">
             <h3 className="text-2xl font-semibold text-green-800 mb-3">📝 Description</h3>
-            <p className="bg-white p-5 rounded-xl shadow-inner text-green-800 leading-relaxed">
+            <p className="bg-white p-5 rounded-xl text-green-700 leading-relaxed border border-green-100">
               {description}
             </p>
           </div>
