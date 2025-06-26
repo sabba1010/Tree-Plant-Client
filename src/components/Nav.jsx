@@ -22,7 +22,9 @@ const Nav = () => {
   return (
     <div className="bg-green-100 shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-4">
-        <Link to="/" className="text-2xl font-bold text-green-900">
+      
+        <Link to="/" className="flex items-center text-2xl font-bold text-green-900">
+        <div className="text-5xl mb-2">🌳</div>
         GreenLeaf Plant Care
         </Link>
 
